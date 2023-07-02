@@ -1,43 +1,4 @@
-// import java.io.*;
-// class GFG {
- 
-//     // Returns true if there is a subset
-//     // of set[] with sum equal to given sum
-//     static boolean isSubsetSum(int set[], int n, int sum)
-//     {
-//         // Base Cases
-//         if (sum == 0)
-//             return true;
-//         if (n == 0)
-//             return false;
- 
-//         // If last element is greater than
-//         // sum, then ignore it
-//         if (set[n - 1] > sum)
-//             return isSubsetSum(set, n - 1, sum);
- 
-//         // Else, check if sum can be obtained
-//         // by any of the following
-//         // (a) including the last element
-//         // (b) excluding the last element
-//         return isSubsetSum(set, n - 1, sum)
-//             || isSubsetSum(set, n - 1, sum - set[n - 1]);
-//     }
- 
-//     // Driver code
-//     public static void main(String args[])
-//     {
-//         int set[] = { 3, 34, 4, 12, 5, 2 };
-//         int sum = 9;
-//         int n = set.length;
-//         if (isSubsetSum(set, n, sum) == true)
-//             System.out.println("Found a subset"
-//                                + " with given sum");
-//         else
-//             System.out.println("No subset with"
-//                                + " given sum");
-//     }
-// }
+
 
 
 
@@ -72,32 +33,3 @@ class subset{
     }
 }
 
-
-//REDUCING CODE'S TIME COMPLEXITY
-// import java.util.Arrays;
-
-// class Solution {
-//     static Boolean isSubsetSum(int N, int arr[], int sum) {
-//         // Create a memoization table
-//         Boolean[][] memo = new Boolean[N + 1][sum + 1];
-        
-//         // Initialize the memoization table
-//         for (int i = 0; i <= N; i++) {
-//             Arrays.fill(memo[i], false);
-//             memo[i][0] = true;
-//         }
-        
-//         // Populate the memoization table
-//         for (int i = 1; i <= N; i++) {
-//             for (int j = 1; j <= sum; j++) {
-//                 if (arr[i - 1] <= j) {
-//                     memo[i][j] = memo[i - 1][j - arr[i - 1]] || memo[i - 1][j];
-//                 } else {
-//                     memo[i][j] = memo[i - 1][j];
-//                 }
-//             }
-//         }
-        
-//         return memo[N][sum];
-//     }
-// }
